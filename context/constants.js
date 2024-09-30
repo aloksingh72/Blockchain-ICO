@@ -6,11 +6,13 @@ import Web3Modal from "web3modal";
 import tokenICO from "./TokenICO.json";
 import erc20 from "./ERC20.json";
 
-export const TOKEN_ADDRESS = "";
-export const ERC20_ABI = "";
+export const TOKEN_ADDRESS = "0xE2793320dC6d0A73786206Eb8Ce3Ed54eFBE1AFd";
+export const ERC20_ABI = erc20.abi;
 
-export const OWNER_ADDRESS = "";
-export const CONTRACT_ABI = "";
+
+export const OWNER_ADDRESS = "0xaBc14b48aA6DBeeeB9D92e884567C74f60c22e49";
+export const CONTRACT_ADDRESS = "0xd5a1A383e9211af48677c5A8c114Cd2a1520f782";
+export const CONTRACT_ABI = tokenICO.abi;
 
 const networks = {
   sepolia: {
