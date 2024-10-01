@@ -44,7 +44,7 @@ const index = () => {
     CHECK_ACCOUNT_BALANCE,
     setAccount,
     setLoader,
-    addtokenToMetaMask,
+    addTokenToMetaMask,
     TOKEN_ADDRESS,
     loader,
     account,
@@ -70,10 +70,10 @@ const index = () => {
     };
     fetchData();
 
-  }, []);
+  }, [account]);
 
   return <>
-    <div className="body_wrap"></div>
+    <div className="body_wrap">
     {ownerModal &&
       <Owner setOwnerModal={setOwnerModal}
         currency={currency}
@@ -161,6 +161,43 @@ const index = () => {
 
       />
     }
+    {
+      loader &&
+      <Loader />
+    }
+
+    <Header
+      account={account}
+      CONNECT_WALLET={CONNECT_WALLET}
+      setAccount={setAccount}
+      setLoader={setLoader}
+      setOwnerModal={setOwnerModal}
+      shortenAddress={shortenAddress}
+      details={details}
+      currency={currency}
+      ownerModal={ownerModal}
+    />
+
+    <SideBar />
+
+    <Hero setBuyModal={setBuyModal}
+      account={account}
+      CONNECT_WALLET={CONNECT_WALLET}
+      setAccount={setAccount}
+      setLoader={setLoader} details={details}
+      addTokenToMetaMask={addTokenToMetaMask}
+    />
+    <About />
+    <Features />
+    <Token />
+    <TokenInfo details={details} currency={currency} />
+    <Team />
+    <Faq />
+    <Contact />
+    <Footer />
+
+    </div>
+
 
 
   </>;
