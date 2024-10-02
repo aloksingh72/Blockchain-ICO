@@ -184,7 +184,8 @@ const index = () => {
       account={account}
       CONNECT_WALLET={CONNECT_WALLET}
       setAccount={setAccount}
-      setLoader={setLoader} details={details}
+      setLoader={setLoader} 
+      details={details}
       addTokenToMetaMask={addTokenToMetaMask}
     />
     <About />
