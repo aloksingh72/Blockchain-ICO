@@ -27,17 +27,27 @@ const Contact = () => {
         <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-lg-6">
-              <input type="text" id="name" name="name" placeholder="Enter Name" />
+              <input type="text"
+               id="name" 
+               name="name" 
+               placeholder="Enter Name" />
             </div>
             <div className="col-lg-6">
-              <input type="email" id="email" name="email" placeholder="Enter Email" />
+              <input type="email"
+               id="email" 
+               name="email"
+                placeholder="Enter Email" />
             </div>
             <div className="col-lg-12">
-              <textarea type="message" id="message" name="message" placeholder="Enter Message" />
+              <textarea type="message"
+               id="message" 
+               name="message"
+                placeholder="Enter Message" />
             </div>
 
             <div className="ico-contact__btn text-center mt-10">
-              <button className="thm-btn" type="submit" disabled={state.submitting}>Send Message</button>
+              <button className="thm-btn" type="submit"
+               disabled={state.submitting}>Send Message</button>
             </div>
           </div>
         </form>
