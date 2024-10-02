@@ -23,7 +23,7 @@ const Hero = ({
 
   useEffect(() => {
     const calculatePercentage = () => {
-      const tokenSold = detail?.soldTokens ?? 0;
+      const tokenSold = details?.soldTokens ?? 0;
       const tokenTotalSupply =
         details?.soldTokens + Number(details?.tokenBal) * 1 ?? 1;
 
