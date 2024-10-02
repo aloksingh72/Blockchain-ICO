@@ -21,7 +21,8 @@ const Faq = () => {
                   <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, dolorem!</li>
                   <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium provident libero at nam iusto?</li>
                   <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, odit.</li>
-                 </ul><br /><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos expedita libero vero adipisci iure! In sequi eum necessitatibus quam commodi!</p>
+                 </ul><br/>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos expedita libero vero adipisci iure! In sequi eum necessitatibus quam commodi!</p>
                 </div>
               </div>
             </li>  <br />
@@ -72,10 +73,11 @@ const Faq = () => {
         </div>
       </div>
 
-      <div className="faq__sec_shape">
+      <div className="faq__sec-shape">
         <div className="shape shape-1">
           <img src="assets/img/shape/s_shape1.png" alt="" />
         </div>
+       
       </div>
 
 

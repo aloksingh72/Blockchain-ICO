@@ -1,6 +1,6 @@
 import React from "react";
 
-const TokenInfo = () => {
+const TokenInfo = ({details,currency}) => {
   return <div>TokenInfo</div>;
 };
 
