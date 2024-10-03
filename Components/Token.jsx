@@ -47,9 +47,9 @@ const Token = () => {
 
               <div className="token__info mt-40">
                 <h2 className="">1 CNL = 0.00000013 BTC </h2>
-                <p>Lorem ipsum, dolor sit amet 
-                  consectetur adipisicing elit. Impedit sunt quam
-                   enim iure autem quis provident placeat aliquid, ex doloribus animi facere? Quia!</p>
+                <p>Lorem ipsum dolor sit amet consectetur, 
+                  adipisicing elit. Sunt doloribus omnis ullam voluptates,
+                   magni quas nihil unde qui dolores enim?!</p>
                 <div className="token-btn mt-40">
                   <a href="#" className="thm-btn">Buy Now</a>
                 </div>
