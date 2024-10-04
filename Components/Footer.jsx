@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="col-lg-4 mt-30">
               <div className="footer__widget footer__subscribe">
                 <h2>Subscribe NewsLetter</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit ea magnam nostrum amet perferendis libero eligendi placeat perspiciatis repellat. Voluptas.</p>
+                <p>Lorem ip sit amet consectetur, adipisicing elit. Fugit ea magnam nostrum amet perferendis libero eligendi placeat perspiciatis repellat. Voluptas.</p>
                 
                 <form action="">
                   <input type="text"
