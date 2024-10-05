@@ -7,7 +7,7 @@ const TokenInfo = ({details,currency}) => {
            <div className="row">
             <div className="col-xl-8 offest-xl-4">
               <div className="token-info__title sec-title mb-95 text-center text-xl-start">
-                <h5 className="sec-title__subtitle">ICO coindox Token</h5>
+                <h5 className="sec-title__subtitle">ICO coindoc Token</h5>
                 <h2 className="sec-title__title">ICO Token <br />Details and Sale</h2>
               </div>
             </div>
@@ -25,11 +25,10 @@ const TokenInfo = ({details,currency}) => {
                 <ul className="token-info__list token-info--start">
                   <li><h4>Total Supply</h4><span>{details?.supply}{details?.symbol}</span></li>
                   <li><h4>Sold Token</h4><span>{Number(details?.soldTokens)}{details?.symbol}</span></li>
-                  <li><h4>Minimal Transaction</h4>
-                  <span>10 Tokens/Transaction</span></li>
+                  <li><h4>Minimum Transaction</h4><span>10 Tokens/Transaction</span></li>
                 </ul>
                 <ul className="token-info__list token-info--end">
-                  <li><h4>Token Market Value</h4><span>{Number(details?.supply)*Number(details?.tokenPrice)}{currency}</span></li>
+                  <li><h4>Token Display Value</h4><span>{Number(details?.supply)*Number(details?.tokenPrice)}{currency}</span></li>
                   <li><h4>Fund Raised</h4><span>{Number(details?.soldTokens)*Number(details?.tokenPrice)}{currency}</span></li>
                   <li><h4>Acceptable Currency</h4><span>ETH , BTC , LTC</span></li>
                 </ul>

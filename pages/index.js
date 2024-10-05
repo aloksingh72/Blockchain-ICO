@@ -163,13 +163,7 @@ const Index = () => {
            )
         }
 
-        {
-          loader && (
-            <Loader/>
-          )
-        }
-
-
+       
       <Header
          account={account}
          setLoader={setLoader}
