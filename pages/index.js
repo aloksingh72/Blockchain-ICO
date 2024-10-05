@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-
 import {
   Footer,
   Header,
@@ -21,15 +20,14 @@ import {
   Owner,
   TransferCurrency,
   Donate,
-  UpdateAddress,
   UpdatePrice,
+  UpdateAddress,
 } from "../Components/index";
 
-import { TOKEN_ICO_Context } from "../context/index";
-import { shortenAddress } from "../Utils/index";
+import { TOKEN_ICO_CONTEXT } from "../context/index";
+import { shortAddress } from "../Utils/index";
 
-const index = () => {
-
+const Index = () => {
   const {
     TOKEN_ICO,
     BUY_TOKEN,
@@ -49,159 +47,167 @@ const index = () => {
     loader,
     account,
     currency,
-  } = useContext(TOKEN_ICO_Context);
+  } = useContext(TOKEN_ICO_CONTEXT);
 
-  const [ownerModal, setOwnerModal] = useState(false);
-  const [buyModal, setBuyModal] = useState(true);
-  const [tranferModal, setTransferModal] = useState(false);
+  const [ownerModel, setOwnerModel] = useState(false);
+  const [buyModel, setBuyModel] = useState(false);
+  const [transferModel, setTransferModel] = useState(false);
+  
   const [transferCurrency, setTransferCurrency] = useState(false);
-  const [openDonote, setOpenDonote] = useState(false);
+  const [openDonate, setOpenDonate] = useState(false);
   const [openUpdatePrice, setOpenUpdatePrice] = useState(false);
-  const [openUpdateAddress, setOpenUpdateAddress] = useState(false);
   const [details, setDetails] = useState();
+  const [openUpdateAddress,setOpenUpdateAddress] = useState(false);
 
+  // Fetch data when the component mounts
   useEffect(() => {
-    console.log("address");
     const fetchData = async () => {
+      console.log("Fetching data...");
       const items = await TOKEN_ICO();
-
-      console.log(items);
       setDetails(items);
     };
     fetchData();
+  }, [account]); // Include TOKEN_ICO in dependency array if it can change
 
-  }, [account]);
+  return (
+    <>
+      <div className="body_wrap">
 
-  return <>
-    <div className="body_wrap">
-    {ownerModal &&
-      <Owner setOwnerModal={setOwnerModal}
-        currency={currency}
-        details={details}
-        account={account}
-        setTransferCurrency={setTransferCurrency}
-        setTranferModal={setTransferModal}
-        setOpenDonote={setOpenDonote}
-        TOKEN_WITHDRAW={TOKEN_WITHDRAW}
-        setOpenUpdatePrice={setOpenUpdatePrice}
-        setOpenUpdateAddress={setOpenUpdateAddress}
+
+        {ownerModel && (
+        <Owner setOwnerModel={setOwnerModel}
+              currency={currency} 
+              details={details}
+              account={account}
+              setTransferModel={setTransferModel}
+              setTransferCurrency={setTransferCurrency}
+              setOpenDonate={setOpenDonate}
+              TOKEN_WITHDRAW={TOKEN_WITHDRAW}
+              setOpenUpdatePrice={setOpenUpdatePrice}
+              setOpenUpdateAddress={setOpenUpdateAddress}
+        />
+        )}
+        {/* Other components can be added here */}
+        {
+          buyModel && (
+            <Popup
+              setBuyModel={setBuyModel}
+              BUY_TOKEN={BUY_TOKEN}
+              currency={currency}
+              details={details}
+              account={account}
+              ERC20={ERC20}
+              TOKEN_ADDRESS={TOKEN_ADDRESS}
+              setLoader={setLoader}
+            />
+          )
+        }
+
+        {
+          transferModel && (
+            <TransferToken
+              setTransferModel={setTransferModel}
+              TRANSFER_TOKEN={TRANSFER_TOKEN}
+              ERC20={ERC20}
+              setLoader={setLoader}
+            />
+          )
+        }
+
+        {
+          transferCurrency && (
+            <TransferCurrency
+              setTransferCurrency={setTransferCurrency}
+              TRANSFER_ETHER={TRANSFER_ETHER}
+              details={details}
+              currency={currency}
+              CHECK_ACCOUNT_BALANCE={CHECK_ACCOUNT_BALANCE}
+              setLoader={setLoader}
+            />
+          ) 
+        }
+
+        {
+         openDonate && (
+            <Donate
+              details={details}
+              currency={currency}
+              setOpenDonate={setOpenDonate}
+              DONATE={DONATE}
+            />
+          )
+        }
+
+        {
+          openUpdatePrice && (
+            <UpdatePrice
+               details={details}
+               currency={currency}
+               setOpenUpdatePrice={setOpenUpdatePrice}
+               UPDATE_TOKEN_PRICE={UPDATE_TOKEN_PRICE}
+
+            />
+          )
+        }
+
+        {
+           openUpdateAddress && (
+            <UpdateAddress
+              details={details}
+              currency={currency}
+              setOpenUpdateAddress={setOpenUpdateAddress}
+              UPDATE_TOKEN={UPDATE_TOKEN}
+              ERC20={ERC20}
+              setLoader={setLoader}
+            />
+           )
+        }
+
+        {
+          loader && (
+            <Loader/>
+          )
+        }
+
+
+      <Header
+         account={account}
+         setLoader={setLoader}
+         CONNECT_WALLET={CONNECT_WALLET}
+         details={details}
+         setAccount={setAccount}
+         setOwnerModel={setOwnerModel}
+         shortAddress={shortAddress}
+         currency={currency}
+         ownerModel={ownerModel}
+
       />
-    }
 
-    {
-      buyModal &&
-      < Popup
-        setBuyModal={setBuyModal}
-        BUY_TOKEN={BUY_TOKEN}
-        currency={currency}
-        details={details}
-        account={account}
-        ERC20={ERC20}
-        TOKEN_ADDRESS={TOKEN_ADDRESS}
-        setLoader={setLoader}
+      <SideBar/>
+
+      <Hero
+       setBuyModel={setBuyModel}
+       account={account}
+       CONNECT_WALLET={CONNECT_WALLET}
+       setAccount={setAccount}
+       setLoader={setLoader}
+       details={details}
+       addTokenToMetaMask={addTokenToMetaMask}
       />
 
-    }
-
-    {
-      tranferModal &&
-      <TransferToken
-        setTransferModal={setTransferModal}
-        TRANSFER_TOKEN={TRANSFER_TOKEN}
-        ERC20={ERC20}
-        setLoader={setLoader}
-      />
-
-    }
-
-    {
-      transferCurrency &&
-      <TransferCurrency
-        TRANSFER_ETHER={TRANSFER_ETHER}
-        setTransferCurrency={setTransferCurrency}
-        details={details}
-        currency={currency}
-        CHECK_ACCOUNT_BALANCE={CHECK_ACCOUNT_BALANCE}
-        setLoader={setLoader}
-      />
-
-    }
-
-    {
-      openDonote &&
-      <Donate
-        details={details}
-        currency={currency}
-        setOpenDonote={setOpenDonote}
-        DONATE={DONATE}
-
-      />
-    }
-
-    {
-      openUpdatePrice &&
-      <UpdatePrice
-        details={details}
-        currency={currency}
-        setOpenUpdatePrice={setOpenUpdatePrice}
-        UPDATE_TOKEN_PRICE={UPDATE_TOKEN_PRICE}
-      />
-    }
-
-    {
-      openUpdateAddress &&
-      <UpdateAddress
-
-        details={details}
-        currency={currency}
-        setOpenUpdateAddress={setOpenUpdateAddress}
-        UPDATE_TOKEN={UPDATE_TOKEN}
-        ERC20={ERC20}
-        setLoader={setLoader}
-
-      />
-    }
-    {
-      loader &&
-      <Loader />
-    }
-
-    <Header
-      account={account}
-      CONNECT_WALLET={CONNECT_WALLET}
-      setAccount={setAccount}
-      setLoader={setLoader}
-      setOwnerModal={setOwnerModal}
-      shortenAddress={shortenAddress}
-      details={details}
-      currency={currency}
-      ownerModal={ownerModal}
-    />
-
-    <SideBar />
-
-    <Hero setBuyModal={setBuyModal}
-      account={account}
-      CONNECT_WALLET={CONNECT_WALLET}
-      setAccount={setAccount}
-      setLoader={setLoader} 
-      details={details}
-      addTokenToMetaMask={addTokenToMetaMask}
-    />
-    <About />
-    <Features />
-    <Token />
-    <TokenInfo details={details} currency={currency} />
-    <Team />
-    <Faq />
-    <Contact />
-    <Footer />
-
-    </div>
+      <About/>
+      <Features/>
+      <Token/>
+      <TokenInfo details={details} currency={currency}/>
+      <Team/>
+      <Faq/>
+      <Contact/>
+      <Footer/>
 
 
-
-  </>;
+      </div>
+    </>
+  );
 };
 
-export default index;
+export default Index;

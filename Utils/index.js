@@ -3,4 +3,4 @@ export const convertTime =()=>{
     const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString()}`;
     return formattedDate;
 };
-export const shortenAddress = (address)=> `${address?.slice(0,4)}...${address?.slice(address.length - 4)}`;
+export const shortAddress = (address)=> `${address?.slice(0,4)}...${address?.slice(address.length - 4)}`;
