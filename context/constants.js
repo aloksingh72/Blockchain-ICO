@@ -6,7 +6,7 @@ import Web3Modal from "web3modal";
 import tokenICO from "./TokenICO.json";
 import erc20 from "./ERC20.json";
 
-export const TOKEN_ADDRESS = "0xE2793320dC6d0A73786206Eb8Ce3Ed54eFBE1AFd";
+export const TOKEN_ADDRESS = "0xAC0b5132265ca2970A7E36D71AE40D12f1A213BC";
 export const ERC20_ABI = erc20.abi;
 
 

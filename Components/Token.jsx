@@ -47,9 +47,7 @@ const Token = () => {
 
               <div className="token__info mt-40">
                 <h2 className="">1 CNL = 0.00000013 BTC </h2>
-                <p>Lorem ipsum dolor sit amet consectetur, 
-                  adipisicing elit. Sunt doloribus omnis ullam voluptates,
-                   magni quas nihil unde qui dolores enim?!</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit sunt quam enim iure autem quis provident placeat aliquid, ex doloribus animi facere? Quia!</p>
                 <div className="token-btn mt-40">
                   <a href="#" className="thm-btn">Buy Now</a>
                 </div>
@@ -64,7 +62,7 @@ const Token = () => {
                   <img src="assets/img/token/token_chart.png" alt="" />
                 </div>
               </div>
-              <div className="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
+              <div className="tab-pane fade   " id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 <div className="token__img">
                   <img src="assets/img/token/token_chart2.png" alt="" />
                 </div>

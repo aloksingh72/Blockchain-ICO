@@ -205,7 +205,7 @@ import {
                 if(address){
 
                     const contract = await TOKEN_ICO_CONTRACT();
-                    const payAmount = ethers.utils.parseUnits(price.toString(),"Ether");
+                    const payAmount = ethers.utils.parseUnits(AMOUNT.toString(),"Ether");
 
                     //we will call transferToOwner() bcoz amount will transfer to owner
                     const transaction = await contract.transferToOwner(payAmount,{
