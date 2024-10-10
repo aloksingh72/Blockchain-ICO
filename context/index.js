@@ -221,7 +221,7 @@ import {
             }
             catch(error){
                 console.log(error);
-                notifyError("error while donate the token")
+                notifyError("Error while donate the token")
             }
         }
 
